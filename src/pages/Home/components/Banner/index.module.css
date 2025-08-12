@@ -1,0 +1,55 @@
+.bannerBox {
+  margin: 0 -120px;
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  position: relative;
+}
+
+.banner {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.databaseTitleSection {
+  padding-top: 119px;
+}
+
+.icon {
+  width: 440px;
+  height: 440px;
+  margin-right: 49px;
+}
+
+.titleText {
+  color: #292d3b;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.descriptionText {
+  color: #768191;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.buttonContainer {
+  width: fit-content;
+  height: 48px;
+  display: flex;
+  margin-top: 40px;
+  gap: 16px;
+}
+
+.enterpriseConsultationButton {
+  min-width: 146px;
+  height: 100%;
+  border-color: #e2e4e8;
+  background-color: #f2f6fa;
+  color: #545762;
+  cursor: pointer;
+}
+.enterpriseConsultationButton:hover {
+  opacity: 0.8;
+}
