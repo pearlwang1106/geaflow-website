@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Home from './Home';
 import { translate } from '@docusaurus/Translate';
