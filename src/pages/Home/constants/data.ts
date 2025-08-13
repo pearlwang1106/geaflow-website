@@ -5,7 +5,6 @@ export const INTRO = {
   list: [
     {
       title: 'product_analytics.feature.title0',
-
       desc: 'product_analytics.feature.desc0',
       span: 8,
       key: 'analytics_1',

@@ -4,12 +4,6 @@ import Layout from '@theme/Layout';
 import Home from './Home';
 
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <h1>1111</h1>
-  );
-}
 
 export default function Index(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
