@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { Options as DocsOptions } from "@docusaurus/plugin-content-docs";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -11,9 +12,9 @@ const config: Config = {
 
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
+  // future: {
+  //   v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  // },
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -26,8 +27,11 @@ const config: Config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "warn",
+
+  trailingSlash: false,
 
   markdown: {
     format: "md",
@@ -51,7 +55,6 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en-US',
     locales: ['en-US', 'zh-CN'],
-    path: 'i18n',
     localeConfigs: {
       'en-US': {
         path: "en-US",
@@ -71,12 +74,10 @@ const config: Config = {
       'classic',
       {
         docs: {
-          versions: {
-            '0.0.1': {
-              label: '0.0.1',
-            },
-          },
-          sidebarPath: './sidebars.ts',
+          id: "0-0-1_en",
+          sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
+          path: "./versions/version-0.0.1/docs-en/source",
+          routeBasePath: "docs",
         },
         blog: {
           showReadingTime: true,
@@ -94,10 +95,28 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  // plugins: [
-  //   require.resolve('docusaurus-lunr-search'),
-  //   require.resolve('./src/plugin/redirect')
-  // ],
+  plugins: [
+    [
+      "content-docs",
+      {
+        id: "0-0-1_zh",
+        sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
+        path: "./versions/version-0.0.1/docs-cn/source",
+        routeBasePath: "docs/zh",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "community",
+        sidebarPath: "./sidebars.ts",
+        path: "./community",
+        routeBasePath: "community",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+  ],
 
   themeConfig: {
     // Replace with your project's social card
@@ -110,26 +129,25 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
+          position: 'left',
           label: 'Docs',
+          to: '/docs/guide',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'communitySidebar',
+          to: '/community/test',
           position: 'left',
           label: 'Community',
         },
         {
-          position: 'right',
+          position: 'left',
           to: '/download',
           label: 'Download',
         },
-        { to: '/blog', label: 'Blog', position: 'right' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           type: 'dropdown',
           label: 'ASF',
-          position: 'right',
+          position: 'left',
           items: [
             {
               label: 'Foundation',
@@ -164,12 +182,6 @@ const config: Config = {
               to: 'https://www.apache.org/foundation/policies/conduct.html'
             }
           ]
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownActiveClassDisabled: true,
-          versions: ['0.0.1'],
         },
         {
           type: 'localeDropdown',

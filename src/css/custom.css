@@ -41,3 +41,7 @@
 .header-locale-dropdown > svg {
   display: none;
 }
+
+.navbar__inner {
+  position: relative;
+}
