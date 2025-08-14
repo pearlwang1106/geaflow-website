@@ -97,6 +97,16 @@ const config: Config = {
         editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
+    [
+      "content-docs",
+      {
+        id: "community-zh",
+        sidebarPath: "./sidebars.ts",
+        path: "./community/zh",
+        routeBasePath: "community/zh",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
   ],
   themeConfig: {
     algolia: {

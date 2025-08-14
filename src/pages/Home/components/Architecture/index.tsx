@@ -1,6 +1,7 @@
 import { SubTitle } from '@site/src/components/SubTitle';
 import styles from './index.module.css';
 import { translate } from '@docusaurus/Translate';
+import { useLocation } from '@docusaurus/router';
 
 const Architecture = () => {
 
