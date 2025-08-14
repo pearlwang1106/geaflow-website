@@ -3,13 +3,14 @@
 import { Button } from 'antd';
 import styles from './index.module.css';
 import FadeInSection from "@site/src/components/FadeInSection";
-import MainButton from '@site/src/components/MainButton';
 import { translate } from '@docusaurus/Translate';
+import { useLocation, useHistory } from '@docusaurus/router';
 
 
 const Banner = () => {
-  // const { search } = useLocation();
+  const { search } = useLocation();
   // const lang = getSearch(search)?.lang || '';
+  const history = useHistory()
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/qm9aTJHOJGIAAAAAAAAAAAAADh8WAQFr/original)';
 
@@ -19,31 +20,28 @@ const Banner = () => {
 
 
   const bannerDetail = {
-    title: translate({ message: 'header.product.desc2' }),
+    title: 'Apache GeaFlow',
     desc: translate({ message: 'product_analytics.description' }),
     btn: (
       <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
 
         <div className={styles.buttonContainer}>
-          <MainButton
-            style={{ height: 48 }}
-            btnText={translate({ message: 'product.btn.desc' })}
-          />
-
-          <Button
-            size="large"
-            shape="round"
-            className={styles.enterpriseConsultationButton}
+          <div
             onClick={() => {
-              // history.push(
-              // historyPushLinkAt(
-              //   `/docs/tugraph-analytics/${getCurrentLanguage()}/guide/`,
-              // ),
-              // );
+              window.open('https://github.com/apache/geaflow');
+            }}
+            className={styles.github}
+          >
+            GitHub
+          </div>
+          <div
+            className={styles.started}
+            onClick={() => {
+              history.push('/docs/quick_start/quick_start');
             }}
           >
-            {translate({ message: 'product.btn.desc1' })}
-          </Button>
+            Get Started
+          </div>
         </div>
       </FadeInSection>
     ),
@@ -70,7 +68,7 @@ const Banner = () => {
           </FadeInSection>
           {bannerDetail?.btn}
         </div>
-        <img src={bannerDetail.icon} alt="" className={styles.icon} />
+        {/* <img src={bannerDetail.icon} alt="" className={styles.icon} /> */}
 
       </div>
     </div>

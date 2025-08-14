@@ -9,11 +9,15 @@
   width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .databaseTitleSection {
-  padding-top: 119px;
+  padding-top: 30px;
+}
+.databaseTitleSection > div {
+  display: flex;
+  justify-content: center;
 }
 
 .icon {
@@ -24,14 +28,16 @@
 
 .titleText {
   color: #292d3b;
-  font-size: 48px;
-  font-weight: 300;
+  font-size: 50px;
+  font-weight: 600;
 }
 
 .descriptionText {
-  color: #768191;
-  font-size: 14px;
+  width: 700px;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 22px;
+  text-align: center;
 }
 
 .buttonContainer {
@@ -42,14 +48,24 @@
   gap: 16px;
 }
 
-.enterpriseConsultationButton {
+.github,
+.started {
   min-width: 146px;
   height: 100%;
-  border-color: #e2e4e8;
-  background-color: #f2f6fa;
-  color: #545762;
+  border-color: rgb(109, 117, 125);
+  background-color: rgb(109, 117, 125);
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
   cursor: pointer;
+  border-radius: 8px;
 }
-.enterpriseConsultationButton:hover {
+
+.started {
+  border-color: rgb(225, 114, 40);
+  background-color: rgb(225, 114, 40);
+}
+
+.started:hover {
   opacity: 0.8;
 }

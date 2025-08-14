@@ -102,17 +102,27 @@ const config: Config = {
         id: "0-0-1_zh",
         sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
         path: "./versions/version-0.0.1/docs-cn/source",
-        routeBasePath: "docs/zh",
+        routeBasePath: "zh-CN/docs",
         editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
     [
       "content-docs",
       {
-        id: "community",
+        id: "community-en",
         sidebarPath: "./sidebars.ts",
-        path: "./community",
+        path: "./community/en",
         routeBasePath: "community",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "community-zh",
+        sidebarPath: "./sidebars.ts",
+        path: "./community/zh",
+        routeBasePath: "community/zh",
         editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
@@ -120,6 +130,11 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
+    algolia: {
+      apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
+      indexName: "gea_flow_z_h_pages",
+      appId: "HO4M21RAQI",
+    },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: '',
@@ -129,14 +144,22 @@ const config: Config = {
       },
       items: [
         {
+          id: 'docs',
           position: 'left',
           label: 'Docs',
           to: '/docs/guide',
+          activeBasePath: 'docs',
         },
         {
           to: '/community/test',
           position: 'left',
           label: 'Community',
+          activeBasePath: 'community',
+        },
+        {
+          to: '/user',
+          position: 'left',
+          label: 'User',
         },
         {
           position: 'left',
@@ -241,16 +264,21 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
-    // algolia: {
-    //   apiKey: "3c4b435fb8814030c3a6672abc015ff2",
-    //   indexName: "tugraphAnalyticsZH",
-    //   appId: "HO4M21RAQI",
-    // },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        name: "algolia-site-verification",
+        content: "4AB782AC2021573E",
+      },
+    },
+  ],
 };
 
 export default config;

@@ -11,19 +11,49 @@
     "product.ecosystem": {
         "message": "产品架构"
     },
-    "header.product.desc2": {
-        "message": "Apache GeaFlow 流图计算引擎"
-    },
     "product_analytics.description": {
-        "message": "云原生、分布式、流/批/图多计算，图/表混合处理"
+        "message": "Apache GeaFlow 是蚂蚁自研的开源分布式实时图计算引擎，支持万亿级图数据分析能力，实现了图表模型的一体化处理和流、批、图多模态计算，并提供了Exactly Once语义、高可用以及一站式云原生研发部署能力，目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。"
     },
     "product.btn.desc": {
         "message": "开始体验"
     },
-    "product.btn.desc1": {
-        "message": "查看文档"
-    },
     "product.intro": {
         "message": "产品介绍"
+    },
+    "product_analytics.feature.title0": {
+        "message": "动态图计算"
+    },
+    "product_analytics.feature.desc0": {
+        "message": "业内率先支持动态图分析的工业级图计算引擎，提升图计算结果的实时性。"
+    },
+    "product_analytics.feature.title1": {
+        "message": "图表混合处理"
+    },
+    "product_analytics.feature.desc1": {
+        "message": "采用SQL+GQL的融合分析语言，提供图模型和表模型的混合数据处理能力。"
+    },
+    "product_analytics.feature.title2": {
+        "message": "统一流批图"
+    },
+    "product_analytics.feature.desc2": {
+        "message": "基于Cycle的事件驱动调度机制，统一了流计算、批处理、图计算模型。"
+    },
+    "product_analytics.feature.title3": {
+        "message": "云原生部署"
+    },
+    "product_analytics.feature.desc3": {
+        "message": "支持K8S等多种执行环境，提供图任务研发管理工具，更适合云上快速部署。"
+    },
+    "product_analytics.feature.title4": {
+        "message": "图原生存储"
+    },
+    "product_analytics.feature.desc4": {
+        "message": "提供面向图的原生存储系统，支持高性能读写和计算下推能力。"
+    },
+    "product_analytics.feature.title5": {
+        "message": "交互式图分析"
+    },
+    "product_analytics.feature.desc5": {
+        "message": "提供图数据的交互式访问和实时分析能力，快速接入BI分析和可视化工具。"
     }
 }

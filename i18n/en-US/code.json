@@ -11,17 +11,11 @@
     "product.ecosystem": {
         "message": "ARCHITECTURE"
     },
-    "header.product.desc2": {
-        "message": "Apache GeaFlow flow graph calculation engine"
-    },
     "product_analytics.description": {
         "message": "Cloud native, distributed, stream/batch/graph multi-computing, graph/table hybrid processing"
     },
     "product.btn.desc": {
         "message": "Start the experience"
-    },
-    "product.btn.desc1": {
-        "message": "View documentation"
     },
     "product.intro": {
         "message": "OVERVIEW"
