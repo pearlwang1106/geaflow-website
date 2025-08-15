@@ -28,10 +28,10 @@ const config: Config = {
   projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
-  onBrokenAnchors: "warn",
+  // onBrokenMarkdownLinks: "warn",
+  // onBrokenAnchors: "warn",
 
-  trailingSlash: false,
+  // trailingSlash: false,
 
   markdown: {
     format: "md",
@@ -74,10 +74,11 @@ const config: Config = {
       'classic',
       {
         docs: {
-          id: "0-0-1_en",
-          sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
-          path: "./versions/version-0.0.1/docs-en/source",
+          id: "current_en",
+          sidebarPath: "./versions_sidebars/version-current-en.ts",
+          path: "./versions/version-current/docs-en/source",
           routeBasePath: "docs",
+          versions: {}
         },
         blog: {
           showReadingTime: true,
@@ -99,10 +100,30 @@ const config: Config = {
     [
       "content-docs",
       {
+        id: "current_zh",
+        sidebarPath: "./versions_sidebars/version-current-zh.ts",
+        path: "./versions/version-current/docs-cn/source",
+        routeBasePath: "docs/zh",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
         id: "0-0-1_zh",
         sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
         path: "./versions/version-0.0.1/docs-cn/source",
-        routeBasePath: "docs/zh",
+        routeBasePath: "docs/0.0.1/zh",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "0-0-1_en",
+        sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
+        path: "./versions/version-0.0.1/docs-en/source",
+        routeBasePath: "docs/0.0.1",
         editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
@@ -129,7 +150,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     algolia: {
       apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
       indexName: "geaflowZH",

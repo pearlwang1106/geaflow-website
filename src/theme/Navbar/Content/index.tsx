@@ -18,6 +18,9 @@ import NavbarSearch from '@theme/Navbar/Search';
 
 import styles from './styles.module.css';
 import { useLocation } from '@docusaurus/router';
+import { Select } from 'antd';
+import { VERSION_CURRENT, VERSIONS } from '@site/src/constants';
+import { getStorage, setStorage } from '@site/src/util/localStorage';
 
 
 
@@ -83,23 +86,42 @@ export default function NavbarContent(): ReactNode {
   const mobileSidebar = useNavbarMobileSidebar();
   const { pathname } = useLocation()
 
+  const getVersion = () => {
+    return getStorage('VERSION') || VERSIONS[0]
+  }
+
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
 
-  console.log('lkm', leftItems, items, pathname);
 
   const searchBarItem = items.find((item) => item.type === 'search');
 
   const centerItems = leftItems.map((item => {
     if (item?.id) {
       const lang = pathname.includes('zh-CN') ? '/zh' : ''
+      const version = getVersion() === VERSION_CURRENT || item?.id !== 'docs' ? '' : `/${getVersion()}`
       return {
         ...item,
-        to: `${item.id}${lang}${item.to}`
+        to: `${item.id}${version}${lang}${item.to}`
       }
     }
     return item
   }))
+
+  const onChangeVersion = (v) => {
+    setStorage('VERSION', v)
+    if (pathname.includes('/docs/')) {
+      const base = pathname.split('/docs/')[0]
+      const version = v === VERSION_CURRENT ? '' : `/${v}`
+      const lang = pathname.includes('zh-CN') ? '/zh' : ''
+      window.location.href = `${base}/docs${version + lang}/guide`
+      return
+    }
+    // 刷新页面
+    window.location.reload()
+  }
+
+
   return (
     <NavbarContentLayout
       left={
@@ -114,6 +136,16 @@ export default function NavbarContent(): ReactNode {
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
+          <Select
+            defaultValue={getVersion()}
+            variant='borderless'
+            onChange={onChangeVersion}
+            options={VERSIONS.map(item => {
+              return {
+                label: item,
+                value: item,
+              }
+            })} />
           <NavbarItems items={rightItems} />
           {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
           {!searchBarItem && (
