@@ -1,0 +1,18 @@
+.repo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.repoRow {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.repoRow > div {
+  width: 440px;
+}

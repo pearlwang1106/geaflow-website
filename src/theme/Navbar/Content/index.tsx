@@ -91,12 +91,12 @@ export default function NavbarContent(): ReactNode {
   const searchBarItem = items.find((item) => item.type === 'search');
 
   const centerItems = leftItems.map((item => {
-    if (item.id === 'docs') {
+    if (item?.id) {
+      const lang = pathname.includes('zh-CN') ? '/zh' : ''
       return {
         ...item,
-        to: pathname.includes('zh-CN') ? '/docs/zh/guide' : item.to
+        to: `${item.id}${lang}${item.to}`
       }
-
     }
     return item
   }))

@@ -102,7 +102,7 @@ const config: Config = {
         id: "0-0-1_zh",
         sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
         path: "./versions/version-0.0.1/docs-cn/source",
-        routeBasePath: "zh-CN/docs",
+        routeBasePath: "docs/zh",
         editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
@@ -132,7 +132,7 @@ const config: Config = {
     // Replace with your project's social card
     algolia: {
       apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
-      indexName: "gea_flow_z_h_pages",
+      indexName: "geaflowZH",
       appId: "HO4M21RAQI",
     },
     image: 'img/docusaurus-social-card.jpg',
@@ -147,11 +147,12 @@ const config: Config = {
           id: 'docs',
           position: 'left',
           label: 'Docs',
-          to: '/docs/guide',
+          to: '/guide',
           activeBasePath: 'docs',
         },
         {
-          to: '/community/test',
+          id: 'community',
+          to: '/how_to_contribute',
           position: 'left',
           label: 'Community',
           activeBasePath: 'community',
@@ -278,6 +279,13 @@ const config: Config = {
         content: "4AB782AC2021573E",
       },
     },
+    {
+      tagName: "script",
+      attributes: {
+        src: "https://tarptaeya.github.io/repo-card/repo-card.js"
+      }
+
+    }
   ],
 };
 

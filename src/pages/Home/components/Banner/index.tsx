@@ -5,6 +5,7 @@ import styles from './index.module.css';
 import FadeInSection from "@site/src/components/FadeInSection";
 import { translate } from '@docusaurus/Translate';
 import { useLocation, useHistory } from '@docusaurus/router';
+import { historyPushLinkAt } from '@site/src/util/link';
 
 
 const Banner = () => {
@@ -37,7 +38,7 @@ const Banner = () => {
           <div
             className={styles.started}
             onClick={() => {
-              history.push('/docs/quick_start/quick_start');
+              history.push(historyPushLinkAt('docs/quick_start/quick_start'));
             }}
           >
             Get Started

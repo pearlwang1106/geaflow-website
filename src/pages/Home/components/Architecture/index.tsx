@@ -19,6 +19,8 @@ const Architecture = () => {
           src={'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2TuZSYCq8egAAAAAAAAAAAAADgOBAQ/original'}
           alt="ecosystem"
         />
+
+
       </div>
     </div>
   );

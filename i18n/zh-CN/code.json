@@ -20,6 +20,9 @@
     "product.intro": {
         "message": "产品介绍"
     },
+    "product.repo": {
+        "message": "TuGraph社区项目"
+    },
     "product_analytics.feature.title0": {
         "message": "动态图计算"
     },
