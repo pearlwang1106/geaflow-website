@@ -108,7 +108,7 @@ const config: Config = {
     [
       "content-docs",
       {
-        id: "zh-0-0-1",
+        id: "zh-0_0_1",
         sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
         path: "./versions/version-0.0.1/docs-cn/source",
         routeBasePath: "docs/0.0.1/zh",
@@ -117,7 +117,7 @@ const config: Config = {
     [
       "content-docs",
       {
-        id: "en-0-0-1",
+        id: "en-0_0_1",
         sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
         path: "./versions/version-0.0.1/docs-en/source",
         routeBasePath: "docs/0.0.1",
