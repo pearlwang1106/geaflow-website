@@ -147,6 +147,7 @@ export default function NavbarContent(): ReactNode {
               }
             })} />
           <NavbarItems items={rightItems} />
+          {/* <DocSearch /> */}
           {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
           {!searchBarItem && (
             <NavbarSearch>

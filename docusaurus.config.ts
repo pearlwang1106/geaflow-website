@@ -74,11 +74,10 @@ const config: Config = {
       'classic',
       {
         docs: {
-          id: "current_en",
+          id: "en-current",
           sidebarPath: "./versions_sidebars/version-current-en.ts",
           path: "./versions/version-current/docs-en/source",
           routeBasePath: "docs",
-          versions: {}
         },
         blog: {
           showReadingTime: true,
@@ -100,47 +99,43 @@ const config: Config = {
     [
       "content-docs",
       {
-        id: "current_zh",
+        id: "zh-current",
         sidebarPath: "./versions_sidebars/version-current-zh.ts",
         path: "./versions/version-current/docs-cn/source",
         routeBasePath: "docs/zh",
-        editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
     [
       "content-docs",
       {
-        id: "0-0-1_zh",
+        id: "zh-0-0-1",
         sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
         path: "./versions/version-0.0.1/docs-cn/source",
         routeBasePath: "docs/0.0.1/zh",
-        editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
     [
       "content-docs",
       {
-        id: "0-0-1_en",
+        id: "en-0-0-1",
         sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
         path: "./versions/version-0.0.1/docs-en/source",
         routeBasePath: "docs/0.0.1",
-        editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
     [
       "content-docs",
       {
-        id: "community-en",
+        id: "en-community",
         sidebarPath: "./sidebars.ts",
         path: "./community/en",
         routeBasePath: "community",
-        editCurrentVersion: false,
       } satisfies DocsOptions,
     ],
     [
       "content-docs",
       {
-        id: "community-zh",
+        id: "zh-community",
         sidebarPath: "./sidebars.ts",
         path: "./community/zh",
         routeBasePath: "community/zh",
