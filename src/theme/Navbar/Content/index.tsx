@@ -22,8 +22,6 @@ import { Select } from 'antd';
 import { VERSION_CURRENT, VERSIONS } from '@site/src/constants';
 import { getStorage, setStorage } from '@site/src/util/localStorage';
 
-
-
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items as NavbarItemConfig[];

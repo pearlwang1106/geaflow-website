@@ -3,36 +3,13 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Options as DocsOptions } from "@docusaurus/plugin-content-docs";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'GeaFlow',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.png',
-
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  // future: {
-  //   v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  // },
-
-  // Set the production url of your site here
   url: 'https://kaiming-l.github.io/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: 'geaflow-website/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
   onBrokenLinks: "warn",
-  // onBrokenMarkdownLinks: "warn",
-  // onBrokenAnchors: "warn",
-
-  // trailingSlash: false,
-
   markdown: {
     format: "md",
     mermaid: true,
@@ -44,14 +21,9 @@ const config: Config = {
           ?.replace(/<IVertex>|<IEdge>/g, "");
         return newContent;
       }
-      // 使用正则表达式替换匹配到的标签为空字符串
       return fileContent;
     },
   },
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en-US',
     locales: ['en-US', 'zh-CN'],
@@ -68,7 +40,6 @@ const config: Config = {
       },
     },
   },
-
   presets: [
     [
       'classic',
@@ -143,7 +114,6 @@ const config: Config = {
       } satisfies DocsOptions,
     ],
   ],
-
   themeConfig: {
     algolia: {
       apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
@@ -171,11 +141,6 @@ const config: Config = {
           position: 'left',
           label: 'Community',
           activeBasePath: 'community',
-        },
-        {
-          to: '/user',
-          position: 'left',
-          label: 'User',
         },
         {
           position: 'left',
@@ -285,7 +250,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-
   headTags: [
     {
       tagName: "meta",
@@ -299,7 +263,6 @@ const config: Config = {
       attributes: {
         src: "https://tarptaeya.github.io/repo-card/repo-card.js"
       }
-
     }
   ],
 };

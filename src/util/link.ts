@@ -1,7 +1,6 @@
 import { VERSION_CURRENT } from "@site/src/constants";
 import { getStorage } from "@site/src/util/localStorage";
 
-
 export const historyPushLinkAt = (
     path: string
 ) => {

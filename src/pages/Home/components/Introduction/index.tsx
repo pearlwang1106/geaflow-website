@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
-
 import { INTRO } from '@site/src/constants';
 import { SubTitle } from '@site/src/components/SubTitle';
 import FadeInSection from '@site/src/components/FadeInSection';
 import styles from './index.module.css';
 import { translate } from '@docusaurus/Translate';
+
 const Introduction = () => {
   return (
     <div

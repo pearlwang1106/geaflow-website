@@ -195,9 +195,6 @@ function useSearchParameters({
     mergeFacetFilters(contextualSearchFacetFilters, configFacetFilters)
     : // ... or use config facetFilters
     configFacetFilters;
-
-  console.log(contextualSearchFacetFilters, configFacetFilters, contextualSearch, 'lkm', filterDocusaurusTag(facetFilters))
-
   // We let users override default searchParameters if they want to
   return {
     ...props.searchParameters,
@@ -208,7 +205,6 @@ function useSearchParameters({
 function DocSearch({ externalUrlRegex, ...props }: DocSearchProps) {
   const navigator = useNavigator({ externalUrlRegex });
   const searchParameters = useSearchParameters({ ...props });
-  console.log('lkm', searchParameters)
   const transformItems = useTransformItems(props);
   const transformSearchClient = useTransformSearchClient();
 

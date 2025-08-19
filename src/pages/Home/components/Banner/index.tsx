@@ -1,31 +1,20 @@
-// import { Button } from 'antd';
-// import MainButton from '@/components/MainButton';
 import { Button } from 'antd';
 import styles from './index.module.css';
 import FadeInSection from "@site/src/components/FadeInSection";
 import { translate } from '@docusaurus/Translate';
-import { useLocation, useHistory } from '@docusaurus/router';
+import { useHistory } from '@docusaurus/router';
 import { historyPushLinkAt } from '@site/src/util/link';
 
-
 const Banner = () => {
-  const { search } = useLocation();
-  // const lang = getSearch(search)?.lang || '';
   const history = useHistory()
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/qm9aTJHOJGIAAAAAAAAAAAAADh8WAQFr/original)';
-
-  // const getCurrentLanguage = () => {
-  //   return lang === 'en-US' ? 'en' : 'zh';
-  // };
-
 
   const bannerDetail = {
     title: 'Apache GeaFlow',
     desc: translate({ message: 'product_analytics.description' }),
     btn: (
       <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
-
         <div className={styles.buttonContainer}>
           <div
             onClick={() => {
@@ -49,8 +38,6 @@ const Banner = () => {
     icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9VjfR7exPyQAAAAAAAAAAAAADh8WAQFr/original',
   }
 
-
-
   return (
     <div
       className={styles.bannerBox}
@@ -69,8 +56,6 @@ const Banner = () => {
           </FadeInSection>
           {bannerDetail?.btn}
         </div>
-        {/* <img src={bannerDetail.icon} alt="" className={styles.icon} /> */}
-
       </div>
     </div>
   );

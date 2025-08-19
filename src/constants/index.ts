@@ -1,5 +1,3 @@
-
-
 export const INTRO = {
   desc: 'product_analytics.introfuction',
   list: [
