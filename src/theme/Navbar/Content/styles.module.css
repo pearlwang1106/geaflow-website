@@ -38,6 +38,9 @@ See https://github.com/facebook/docusaurus/pull/11142
   .versionSelect {
     margin-right: 180px;
   }
+  .navbarCenter {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 767.99px) {

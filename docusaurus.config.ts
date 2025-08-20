@@ -1,4 +1,3 @@
-import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Options as DocsOptions } from "@docusaurus/plugin-content-docs";
@@ -123,7 +122,6 @@ const config: Config = {
       indexName: "geaflow",
       appId: "HO4M21RAQI",
     },
-    image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: '',
       logo: {
@@ -248,10 +246,6 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
   } satisfies Preset.ThemeConfig,
   headTags: [
     {
@@ -260,12 +254,6 @@ const config: Config = {
         name: "algolia-site-verification",
         content: "4AB782AC2021573E",
       },
-    },
-    {
-      tagName: "script",
-      attributes: {
-        src: "https://tarptaeya.github.io/repo-card/repo-card.js"
-      }
     }
   ],
 };
