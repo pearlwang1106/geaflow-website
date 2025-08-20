@@ -120,7 +120,7 @@ const config: Config = {
   themeConfig: {
     algolia: {
       apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
-      indexName: "geaflowZH",
+      indexName: "geaflow",
       appId: "HO4M21RAQI",
     },
     image: 'img/docusaurus-social-card.jpg',
