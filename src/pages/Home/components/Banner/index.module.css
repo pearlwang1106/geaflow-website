@@ -1,12 +1,12 @@
 .bannerBox {
-  margin: 0 -120px;
   background-repeat: no-repeat;
-  background-size: 100% 400px;
+  background-size: 1440px auto;
+  background-position: right;
   position: relative;
+  padding: 36px 0 72px;
 }
 
 .banner {
-  width: 1200px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -33,7 +33,7 @@
 }
 
 .descriptionText {
-  width: 700px;
+  width: 50vw;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
@@ -68,4 +68,10 @@
 
 .started:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 767.99px) {
+  .descriptionText {
+    width: 90vw;
+  }
 }

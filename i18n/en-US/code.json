@@ -12,7 +12,7 @@
         "message": "ARCHITECTURE"
     },
     "product_analytics.description": {
-        "message": "Apache GeaFlow is an open-source distributed real-time graph computing engine developedby Ant Group, supporting trillion-scale graph data analysis capabilities. It implements unifiedprocessing of graph and table models, multi-modal computing for streaming, batch, and graphprocessing, and provides Exactly Once semantics, high availability, and one-stop cloud-nativedevelopment and deployment capabilities. It is currently widely used in scenarios such as datawarehouse acceleration, financial risk control, knowledge graphs, and social networks."
+        "message": "Graph-based unified stream-batch processing enables efficient complex relationship computations, supporting integrated table-graph real-time analysis."
     },
     "product.btn.desc": {
         "message": "Start the experience"

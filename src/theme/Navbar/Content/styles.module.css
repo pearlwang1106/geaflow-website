@@ -27,3 +27,15 @@ See https://github.com/facebook/docusaurus/pull/11142
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 999.99px) {
+  .versionSelect {
+    margin-right: 180px;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .versionSelect {
+    margin-right: 50px;
+  }
+}

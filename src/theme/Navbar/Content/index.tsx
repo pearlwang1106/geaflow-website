@@ -135,6 +135,7 @@ export default function NavbarContent(): ReactNode {
         // Ask the user to add the respective navbar items => more flexible
         <>
           <Select
+            className={styles.versionSelect}
             defaultValue={getVersion()}
             variant='borderless'
             onChange={onChangeVersion}

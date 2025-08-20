@@ -43,7 +43,6 @@ const Banner = () => {
       className={styles.bannerBox}
       style={{
         backgroundImage: background,
-        height: '567px',
       }}
     >
       <div className={styles.banner}>

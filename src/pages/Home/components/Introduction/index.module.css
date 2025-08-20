@@ -1,13 +1,12 @@
 .container {
   overflow: hidden;
-  margin: 0 -120px;
-  padding: 0 120px 87px;
+  padding: 0 8vw 87px;
   background-image: url("https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DdvESa5TfhQAAAAAAAAAAAAADh8WAQFr/original");
   background-size: cover;
 }
 
 .container > div {
-  width: 1200px;
+  width: 100%;
   margin: auto;
 }
 
@@ -22,6 +21,7 @@
 
 .contentBoxAll {
   width: 100%;
+  margin: 0 !important;
 }
 
 .contentBox {
@@ -64,4 +64,11 @@
   margin: 0 30px 0 102px;
   width: 208px;
   height: 208px;
+}
+
+@media (max-width: 767.99px) {
+  .ant-col-8 {
+    max-width: 100% !important;
+    background-color: red;
+  }
 }

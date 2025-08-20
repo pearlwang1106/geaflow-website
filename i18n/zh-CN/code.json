@@ -12,7 +12,7 @@
         "message": "产品架构"
     },
     "product_analytics.description": {
-        "message": "Apache GeaFlow 是蚂蚁自研的开源分布式实时图计算引擎，支持万亿级图数据分析能力，实现了图表模型的一体化处理和流、批、图多模态计算，并提供了Exactly Once语义、高可用以及一站式云原生研发部署能力，目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。"
+        "message": "基于图模型实现流批一体高效关联计算，支持图表融合实时分析。"
     },
     "product.btn.desc": {
         "message": "开始体验"
