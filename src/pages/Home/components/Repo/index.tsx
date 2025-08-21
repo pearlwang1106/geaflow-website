@@ -13,7 +13,6 @@ const Repo = () => {
                 return getRepoServices(repo)
             })
             const res = await Promise.all(serviceALl)
-            console.log(JSON.stringify(res))
             setRepos(res || [])
         } catch (error) {
             console.error(error)
