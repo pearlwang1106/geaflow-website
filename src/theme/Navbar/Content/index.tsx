@@ -10,7 +10,6 @@ import {
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
 import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
-import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
@@ -18,7 +17,6 @@ import NavbarSearch from '@theme/Navbar/Search';
 
 import styles from './styles.module.css';
 import { useLocation } from '@docusaurus/router';
-import { Select } from 'antd';
 import { VERSION_CURRENT, VERSIONS } from '@site/src/constants';
 import { getStorage, setStorage } from '@site/src/util/localStorage';
 
@@ -134,17 +132,28 @@ export default function NavbarContent(): ReactNode {
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
-          <Select
-            className={styles.versionSelect}
-            defaultValue={getVersion()}
-            variant='borderless'
-            onChange={onChangeVersion}
-            options={VERSIONS.map(item => {
-              return {
-                label: item,
-                value: item,
-              }
-            })} />
+          <div className={styles.versionSelect}>
+            <div className={styles.versions}>
+              {VERSIONS.map(item => {
+                return (
+                  <div className={
+                    clsx(styles.selectItem, item === getVersion() && styles.selectItemActive)
+                  } key={item} onClick={() => {
+                    if (item !== getVersion()) {
+                      onChangeVersion(item)
+                    }
+                  }}>
+                    {item}
+                  </div>
+                )
+              })}
+
+            </div>
+            <div className={styles.current}>
+              {getVersion()}
+            </div>
+          </div>
+
           <NavbarItems items={rightItems} />
           {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
           {!searchBarItem && (

@@ -16,7 +16,7 @@ const Introduction = () => {
           <div className={styles.featureContainer}>
             <Row gutter={[24, 24]} className={styles.contentBoxAll}>
               {INTRO.list?.map((item) => (
-                <Col span={24} md={item?.span} key={item.key}>
+                <Col span={24} md={8} key={item.key}>
                   <div className={styles.contentBox}>
                     <div className={styles.intlText}>
                       <div className={styles.title}>{translate({ message: item?.title })}</div>
