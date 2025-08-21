@@ -1,66 +1,67 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import type { Options as DocsOptions } from "@docusaurus/plugin-content-docs";
 
 const config: Config = {
   title: 'GeaFlow',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.png',
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  url: 'https://kaiming-l.github.io/',
+  baseUrl: 'geaflow-website/',
+  onBrokenLinks: "warn",
+  markdown: {
+    format: "md",
+    mermaid: true,
+    preprocessor: ({ filePath, fileContent }) => {
+      if (filePath.includes("application-development/1.api/1.overview")) {
+        const regex = /<([A-Z\s,]+)>/g;
+        const newContent = fileContent
+          ?.replace(regex, "")
+          ?.replace(/<IVertex>|<IEdge>/g, "");
+        return newContent;
+      }
+      return fileContent;
+    },
   },
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'en-US',
+    locales: ['en-US', 'zh-CN'],
+    localeConfigs: {
+      'en-US': {
+        path: "en-US",
+        label: 'English',
+        htmlLang: 'en-US',
+      },
+      'zh-CN': {
+        path: "zh-CN",
+        label: '简体中文',
+        htmlLang: 'zh-CN',
+      },
+    },
   },
-
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          id: "en-current",
+          sidebarPath: "./versions_sidebars/version-current-en.ts",
+          path: "./versions/version-current/docs-en/source",
+          routeBasePath: "docs",
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -68,9 +69,60 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: [
+    [
+      "content-docs",
+      {
+        id: "zh-current",
+        sidebarPath: "./versions_sidebars/version-current-zh.ts",
+        path: "./versions/version-current/docs-cn/source",
+        routeBasePath: "docs/zh",
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "zh-0_0_1",
+        sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
+        path: "./versions/version-0.0.1/docs-cn/source",
+        routeBasePath: "docs/0.0.1/zh",
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "en-0_0_1",
+        sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
+        path: "./versions/version-0.0.1/docs-en/source",
+        routeBasePath: "docs/0.0.1",
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "en-community",
+        sidebarPath: "./sidebars.ts",
+        path: "./community/en",
+        routeBasePath: "community",
+      } satisfies DocsOptions,
+    ],
+    [
+      "content-docs",
+      {
+        id: "zh-community",
+        sidebarPath: "./sidebars.ts",
+        path: "./community/zh",
+        routeBasePath: "community/zh",
+        editCurrentVersion: false,
+      } satisfies DocsOptions,
+    ],
+  ],
   themeConfig: {
-    // Replace with your project's social card
+    algolia: {
+      apiKey: "315fd6a0c1acbdeecd5ba56d8062d00d",
+      indexName: "geaflow",
+      appId: "HO4M21RAQI",
+    },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: '',
@@ -80,15 +132,73 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          id: 'docs',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
+          to: '/guide',
+          activeBasePath: 'docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          id: 'community',
+          to: '/how_to_contribute',
+          position: 'left',
+          label: 'Community',
+          activeBasePath: 'community',
+        },
+        {
+          position: 'left',
+          to: '/download',
+          label: 'Download',
+        },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          type: 'dropdown',
+          label: 'ASF',
+          position: 'left',
+          items: [
+            {
+              label: 'Foundation',
+              to: 'https://www.apache.org/'
+            },
+            {
+              label: 'License',
+              to: 'https://www.apache.org/licenses/'
+            },
+            {
+              label: 'Events',
+              to: 'https://www.apache.org/events/current-event.html'
+            },
+            {
+              label: 'Privacy',
+              to: 'https://privacy.apache.org/policies/privacy-policy-public.html'
+            },
+            {
+              label: 'Security',
+              to: 'https://www.apache.org/security/'
+            },
+            {
+              label: 'Sponsorship',
+              to: 'https://www.apache.org/foundation/sponsorship.html'
+            },
+            {
+              label: 'Thanks',
+              to: 'https://www.apache.org/foundation/thanks.html'
+            },
+            {
+              label: 'Code of Conduct',
+              to: 'https://www.apache.org/foundation/policies/conduct.html'
+            }
+          ]
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          className: 'header-locale-dropdown',
+        },
+        {
+          href: 'https://github.com/apache/geaflow',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -143,6 +253,21 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        name: "algolia-site-verification",
+        content: "4AB782AC2021573E",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {
+        src: "https://tarptaeya.github.io/repo-card/repo-card.js"
+      }
+    }
+  ],
 };
 
 export default config;
