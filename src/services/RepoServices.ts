@@ -2,11 +2,7 @@ export async function getRepoServices(
     repo: string
 ) {
     try {
-        const res = await fetch('https://api.github.com/repos/TuGraph-family/' + repo, {
-            headers: {
-                'Authorization': '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'
-            }
-        });
+        const res = await fetch('https://api.github.com/repos/TuGraph-family/' + repo);
         const {
             description,
             stargazers_count,

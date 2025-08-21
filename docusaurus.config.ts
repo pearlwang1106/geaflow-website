@@ -254,6 +254,13 @@ const config: Config = {
         name: "algolia-site-verification",
         content: "4AB782AC2021573E",
       },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:image",
+        content: "https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*PkdvSLd2A6kAAAAAQMAAAAgAep_eAQ/original",
+      },
     }
   ],
 };
