@@ -40,3 +40,11 @@ export const REPOS = ['tugraph-db', 'chat2graph', 'OSGraph', 'Awesome-Text2GQL',
 export const VERSIONS = ['0.0.2', '0.0.1']
 
 export const VERSION_CURRENT = '0.0.2'
+
+export const LANGUAGE_ICON_COLOR = {
+  'Java': '#b07219',
+  'Python': '#3572A5',
+  'TypeScript': '#3178c6',
+  'C++': '#f34b7d',
+  'Vue': '#41b883'
+}
