@@ -155,7 +155,6 @@ export default function NavbarContent(): ReactNode {
           </div>
 
           <NavbarItems items={rightItems} />
-          {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
           {!searchBarItem && (
             <NavbarSearch>
               <SearchBar />
