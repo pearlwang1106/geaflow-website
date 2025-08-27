@@ -1,13 +1,4 @@
 {
-    "github": {
-        "message": "GITHUB"
-    },
-    "home.btn.desc1": {
-        "message": "阿里云"
-    },
-    "header.assets.download": {
-        "message": "下载中心"
-    },
     "product.ecosystem": {
         "message": "产品架构"
     },
@@ -19,6 +10,9 @@
     },
     "product.intro": {
         "message": "产品介绍"
+    },
+    "product.intro.desc": {
+        "message": "Apache GeaFlow（孵化中）是一款分布式流批一体化图计算产品，支持图表混合处理、实时图计算、交互式图分析等核心能力，并提供了高可用、一站式云原生研发部署能力。基于蚂蚁集团万亿级图计算自主研发实践，GeaFlow目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。GeaFlow现已成为Apache 软件基金会（ASF）的孵化器项目。"
     },
     "product.repo": {
         "message": "TuGraph社区项目"

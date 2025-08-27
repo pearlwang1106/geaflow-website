@@ -1,13 +1,4 @@
 {
-    "github": {
-        "message": "GITHUB"
-    },
-    "home.btn.desc1": {
-        "message": "Alibaba Cloud"
-    },
-    "header.assets.download": {
-        "message": "Download Center"
-    },
     "product.ecosystem": {
         "message": "ARCHITECTURE"
     },
@@ -19,6 +10,9 @@
     },
     "product.intro": {
         "message": "OVERVIEW"
+    },
+    "product.intro.desc": {
+        "message": "Apache GeaFlow (Incubating) is a distributed unified stream-batch graph computing product that supports core capabilities including mixed table-graph processing, real-time graph computing, and interactive graph analysis. It provides high availability and one-stop cloud-native development and deployment capabilities. Based on Ant Group's self-developed trillion-scale graph computing practices, GeaFlow is currently widely applied in scenarios such as data warehouse acceleration, financial risk control, knowledge graphs, and social networks. GeaFlow has now become an incubator project of the Apache Software Foundation (ASF)."
     },
     "product.repo": {
         "message": "TuGraph Family"

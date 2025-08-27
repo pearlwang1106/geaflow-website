@@ -66,6 +66,11 @@
   height: 208px;
 }
 
+.desc {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
 @media (max-width: 767.99px) {
   .ant-col-8 {
     max-width: 100% !important;
