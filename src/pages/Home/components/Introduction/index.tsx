@@ -12,6 +12,8 @@ const Introduction = () => {
     >
       <div>
         <SubTitle title={translate({ message: 'product.intro' })} />
+        <FadeInSection>
+          <div className={styles.desc}>{translate({ message: 'product.intro.desc' })}</div></FadeInSection>
         <FadeInSection threshold={0.3}>
           <div className={styles.featureContainer}>
             <Row gutter={[24, 24]} className={styles.contentBoxAll}>

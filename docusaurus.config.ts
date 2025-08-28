@@ -138,7 +138,7 @@ const config: Config = {
         },
         {
           id: 'community',
-          to: '/how_to_contribute',
+          to: '/community',
           position: 'left',
           label: 'Community',
           activeBasePath: 'community',
