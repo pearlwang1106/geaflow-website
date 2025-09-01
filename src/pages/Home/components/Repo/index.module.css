@@ -7,9 +7,9 @@
 
 .repoCardList {
   margin: auto;
-  width: 836px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 36px;
 }

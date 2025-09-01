@@ -55,6 +55,7 @@ const Banner = () => {
           </FadeInSection>
           {bannerDetail?.btn}
         </div>
+        <img src='https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9VjfR7exPyQAAAAAAAAAAAAADh8WAQFr/original' alt="" className={styles.icon} />
       </div>
     </div>
   );

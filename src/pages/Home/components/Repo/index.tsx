@@ -27,7 +27,7 @@ const Repo = () => {
         window.open(`https://github.com/TuGraph-family/${repo}/${path}`)
     }
 
-    return <div className={styles.repo}>
+    return repos?.length ? <div className={styles.repo}>
         <SubTitle
             title={translate({ message: 'product.repo' })}
         />
@@ -50,7 +50,7 @@ const Repo = () => {
                 </div>)
             }
         </div>
-    </div>
+    </div> : null
 }
 
 export default Repo

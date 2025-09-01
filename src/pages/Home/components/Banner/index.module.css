@@ -1,20 +1,17 @@
 .bannerBox {
   background-repeat: no-repeat;
-  background-size: 1440px auto;
+  background-size: 100% auto;
   background-position: right;
   position: relative;
-  padding: 36px 0 72px;
 }
 
 .banner {
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.databaseTitleSection {
-  padding-top: 30px;
-}
 .databaseTitleSection > div {
   display: flex;
   justify-content: center;
