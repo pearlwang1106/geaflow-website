@@ -16,5 +16,6 @@ export const historyPushLinkAt = (
     if (['docs', 'community'].includes(navpath) && pathname.includes('/zh-CN')) {
         navLang = `${navLang}/zh`
     }
+
     return `${basePath}${lang}${navLang + '/' + route}`
 };
