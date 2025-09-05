@@ -202,3 +202,10 @@ header > h1,
 header > h2 {
   font-size: 2rem !important;
 }
+
+/* footer style */
+
+.footer__title,
+.footer__item {
+  text-align: center;
+}
