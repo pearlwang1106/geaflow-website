@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2135],{78177:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/geaflow-website/blog/page/3","page":3,"postsPerPage":10,"totalPages":4,"totalCount":36,"previousPage":"/geaflow-website/blog/page/2","nextPage":"/geaflow-website/blog/page/4","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
