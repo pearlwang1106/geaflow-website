@@ -12,6 +12,7 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 36px;
+  max-width: 1300px;
 }
 
 .repoCard {

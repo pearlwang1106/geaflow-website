@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 440px;
 }
 
 .databaseTitleSection > div {
@@ -70,5 +71,9 @@
 @media (max-width: 767.99px) {
   .descriptionText {
     width: 90vw;
+  }
+
+  .icon {
+    display: none;
   }
 }

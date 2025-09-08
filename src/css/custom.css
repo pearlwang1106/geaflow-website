@@ -80,6 +80,10 @@
   font-weight: 400;
 }
 
+.menu__list {
+  padding-top: 16px;
+}
+
 .menu__list-item-collapsible,
 .menu__list-item {
   border-radius: 8px;
