@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgeaflow_website=self.webpackChunkgeaflow_website||[]).push([[8305],{7880:(e,s,l)=>{l.r(s),l.d(s,{default:()=>h});var a=l(77247),c=l(74848);const h=()=>(0,c.jsx)(a.A,{children:(0,c.jsx)("h1",{children:"user"})})}}]);
