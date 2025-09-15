@@ -6,7 +6,7 @@ const config: Config = {
   title: 'GeaFlow',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.png',
-  url: 'https://kaiming-l.github.io/',
+  url: 'https://apache.github.io/',
   baseUrl: 'geaflow-website/',
   onBrokenLinks: "warn",
   markdown: {
@@ -76,24 +76,6 @@ const config: Config = {
         sidebarPath: "./versions_sidebars/version-current-zh.ts",
         path: "./versions/version-current/docs-cn/source",
         routeBasePath: "docs/zh",
-      } satisfies DocsOptions,
-    ],
-    [
-      "content-docs",
-      {
-        id: "zh-0_0_1",
-        sidebarPath: "./versions_sidebars/version-0.0.1-zh.ts",
-        path: "./versions/version-0.0.1/docs-cn/source",
-        routeBasePath: "docs/0.0.1/zh",
-      } satisfies DocsOptions,
-    ],
-    [
-      "content-docs",
-      {
-        id: "en-0_0_1",
-        sidebarPath: "./versions_sidebars/version-0.0.1-en.ts",
-        path: "./versions/version-0.0.1/docs-en/source",
-        routeBasePath: "docs/0.0.1",
       } satisfies DocsOptions,
     ],
     [

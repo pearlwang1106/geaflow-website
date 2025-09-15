@@ -132,27 +132,32 @@ export default function NavbarContent(): ReactNode {
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
-          <div className={styles.versionSelect}>
-            <div className={styles.versions}>
-              {VERSIONS.map(item => {
-                return (
-                  <div className={
-                    clsx(styles.selectItem, item === getVersion() && styles.selectItemActive)
-                  } key={item} onClick={() => {
-                    if (item !== getVersion()) {
-                      onChangeVersion(item)
-                    }
-                  }}>
-                    {item}
-                  </div>
-                )
-              })}
+          {
+            VERSIONS.length > 1 && (
+              <div className={styles.versionSelect}>
+                <div className={styles.versions}>
+                  {VERSIONS.map(item => {
+                    return (
+                      <div className={
+                        clsx(styles.selectItem, item === getVersion() && styles.selectItemActive)
+                      } key={item} onClick={() => {
+                        if (item !== getVersion()) {
+                          onChangeVersion(item)
+                        }
+                      }}>
+                        {item}
+                      </div>
+                    )
+                  })}
 
-            </div>
-            <div className={styles.current}>
-              {getVersion()}
-            </div>
-          </div>
+                </div>
+                <div className={styles.current}>
+                  {getVersion()}
+                </div>
+              </div>
+            )
+          }
+
 
           <NavbarItems items={rightItems} />
           {!searchBarItem && (
