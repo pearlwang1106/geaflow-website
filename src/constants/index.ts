@@ -37,9 +37,9 @@ export const INTRO = {
 export const REPOS = ['tugraph-db', 'chat2graph', 'OSGraph', 'Awesome-Text2GQL', 'miniGU', 'community']
 
 
-export const VERSIONS = ['0.0.2', '0.0.1']
+export const VERSIONS = ['0.0.1']
 
-export const VERSION_CURRENT = '0.0.2'
+export const VERSION_CURRENT = '0.0.1'
 
 export const LANGUAGE_ICON_COLOR = {
   'Java': '#b07219',
